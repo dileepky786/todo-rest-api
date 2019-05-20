@@ -40,14 +40,18 @@ public class TodoController{
     }
 
     @PostMapping("/todos")
-    public void saveTodo(@RequestBody Todo todo){
+    public List<Todo> saveTodo(@RequestBody Todo todo){
         
         todoRepo.save(todo);
+
+        List<Todo> todos = todoRepo.findAll();
+
+        return todos;
     }
 
     @DeleteMapping("/todos/{id}")
     public void deleteTodo(@PathVariable int id){
         
-        todoRepo.deleteById(id);;
+        todoRepo.deleteById(id);
     }
 }

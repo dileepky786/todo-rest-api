@@ -1,12 +1,14 @@
 package todo.com.todo;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Todo{
 
-    @Id
+	@Id
+	@GeneratedValue
     private int id;
     private String title;
 	private Boolean completed;
