@@ -17,15 +17,15 @@ public class TodoApplication implements CommandLineRunner{
 	@Override
     public void run(String...args) throws Exception {
 		
-		this.todoRepo.save(new Todo(1,"todo1",true));
-		this.todoRepo.save(new Todo(2,"todo2",true));
-		this.todoRepo.save(new Todo(3,"todo3",true));
-		this.todoRepo.save(new Todo(4,"todo4",true));
-		this.todoRepo.save(new Todo(6,"todo6",true));
-		this.todoRepo.save(new Todo(7,"todo7",true));
-		this.todoRepo.save(new Todo(8,"todo8",true));
-		this.todoRepo.save(new Todo(9,"todo9",true));
-		this.todoRepo.save(new Todo(10,"todo10",true));		
+		this.todoRepo.save(new Todo(1,"brush teeth",true));
+		this.todoRepo.save(new Todo(2,"shoes polish",true));
+		this.todoRepo.save(new Todo(3,"iron cloths",true));
+		this.todoRepo.save(new Todo(4,"make breakfast",true));
+		this.todoRepo.save(new Todo(6,"clean room",true));
+		this.todoRepo.save(new Todo(7,"bring vegitables",true));
+		this.todoRepo.save(new Todo(8,"prepare protien shake",true));
+		this.todoRepo.save(new Todo(9,"hit the gym",true));
+		this.todoRepo.save(new Todo(10,"read before going to sleep",true));		
 	
 
     }
