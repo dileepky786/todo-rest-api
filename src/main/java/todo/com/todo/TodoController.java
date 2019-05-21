@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
@@ -53,5 +55,11 @@ public class TodoController{
     public void deleteTodo(@PathVariable int id){
         
         todoRepo.deleteById(id);
+    }
+
+    @GetMapping("todos/search")
+    public List<Todo> search(@RequestParam(value = "q") String q){
+
+        return todoRepo.findAll().stream().filter(x -> x.getTitle().toLowerCase().contains(q.toLowerCase())).collect(Collectors.toList());
     }
 }
